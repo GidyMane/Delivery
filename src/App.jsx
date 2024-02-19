@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Admin from "./components/admin";
 import Order from "./components/order";
@@ -8,14 +9,23 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Navbar />
-                <Switch>
-                    <Route path="/admin" component={Admin} />
-                    <Route path="/order" component={Order} />
-                </Switch>
+
+                <Routes>
+                    <Route path="/" element={<Navbar />}>
+
+
+                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/order" element={<Order />} />
+                    </Route>
+                </Routes>
             </div>
         </Router>
     );
 }
 
 export default App;
+
+
+
+
+

@@ -1,13 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Children } from "react";
+import { Link, Outlet } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({children}) => {
     return (
         <nav>
             <ul>
                 <li><Link to="/admin">Admin</Link></li>
                 <li><Link to="/order">Order</Link></li>
             </ul>
+            <div>
+                <Outlet/>
+            </div>
         </nav>
     );
 }
